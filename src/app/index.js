@@ -19,7 +19,10 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <Home name={"Max"} aget={27} user={user}/>
+            <Home name={"Max"} aget={27} user={user}>
+              <p>This is a paragraph</p>
+              <p>And this is another.</p>
+            </Home>
           </div>
         </div>
       </div>

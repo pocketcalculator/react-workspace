@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export class Home extends React.Component {
   render() {
@@ -16,7 +17,16 @@ export class Home extends React.Component {
             {this.props.user.hobbies.map((hobby) => <li>{hobby}</li>)}
           </ul>
         </div>
+        <hr/>
+        {this.props.children}
       </div>
     )
   }
+}
+
+Home.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number,
+  user: PropTypes.object,
+  childre: PropTypes.element.isRequired
 }
