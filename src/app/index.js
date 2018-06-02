@@ -3,13 +3,23 @@ import { render } from 'react-dom'
 
 import { Header } from './components/Header'
 import { Home } from './components/Home'
+import { ContactsList } from './components/ContactsList'
+
+const contacts = [{
+  name: 'Scott',
+  phone: '555 333 5555'
+},
+{
+  name: 'Paul',
+  phone: '203 333 5555'
+},
+{
+  name: 'Anne',
+  phone: '404 333 5555'
+}]
 
 class App extends React.Component {
   render() {
-    const user = {
-      name: "Anna",
-      hobbies: ["Sports", "Reading", "Sleeping"]
-    }
     return (
       <div className="container">
         <div className="row">
@@ -19,15 +29,16 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <Home name={"Max"} aget={27} user={user}>
-              <p>This is a paragraph</p>
-              <p>And this is another.</p>
-            </Home>
+            <Home name={"Max"} initialAge={27}/>
           </div>
+        </div>
+        <div>
+          <h1>Contacts List</h1>
+          <ContactsList contacts={this.props.contacts}/>
         </div>
       </div>
     )
   }
 }
 
-render(<App/>, window.document.getElementById("app"))
+render(<App contacts={contacts}/>, window.document.getElementById("app"))
